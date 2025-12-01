@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #1e1f23;
+  color: #eee;
+}
+
+/* ---------------- HEADER ---------------- */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6%;
+}
+
+.logo {
+  width: 70px;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  color: #00e0e6;
+  text-shadow: 0px 0px 10px #00e0e6;
+}
+
+hr {
+  opacity: 10%;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 6%;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00e0e6;
+}
+
+.heroBtns {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.hireMe, .cv {
+  padding: 0.7rem 1.7rem;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.hireMe {
+  background-color: #00e0e6;
+}
+
+.cv {
+  background-color: #2c313a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv:hover,
+.hireMe:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px #00e0e67a;
+}
+
+.heroImg {
+  width: 420px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.aboutMe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 6%;
+}
+
+.aboutMeImg {
+  width: 420px;
+}
+
+.textTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.aboutName {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.aboutTitle {
+  color: #00e0e6;
+  font-size: 2.5rem;
+}
+
+.aboutMepar {
+  margin-top: 1rem;
+  max-width: 450px;
+  color: #bbbbbb;
+  line-height: 1.7;
+}
+
+/* ---------------- WORKS ---------------- */
+
+.works {
+  background: linear-gradient(to bottom, #1e1f23, #131416);
+  padding: 6rem 6%;
+  margin-top: 4rem;
+}
+
+.projectTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 2rem;
+}
+
+.works ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.works li {
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.works li:hover {
+  transform: scale(1.08);
+}
+
+.works li img {
+  width: 230px;
+  height: 230px;
+  object-fit: contain;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contactContainer {
+  padding: 6rem 6%;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  margin-top: 2rem;
+}
+
+.emailAndPhone {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact a, 
+.contact h3 {
+  color: #fff;
+  text-decoration: none;
+}
+
+.socialList {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.socialMedia {
+  padding: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+
+.socialMedia:hover {
+  transform: scale(1.2);
+  background-color: #00e0e6;
+}
+
+.socialMedia img {
+  width: 28px;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #ddd;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 992px) {
+  .hero, .aboutMe {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .heroImg, .aboutMeImg {
+    width: 330px;
+  }
+
+  .contact {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .works ul {
+    flex-direction: column;
+  }
+}
