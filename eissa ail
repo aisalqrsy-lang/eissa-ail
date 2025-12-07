@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيسى الضراسي | مهندس برمجيات ومطور ويب محترف</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+        :root {
+            --primary-dark: #0a192f;
+            --secondary-dark: #0f2547;
+            --accent-primary: #00d9ff;
+            --accent-secondary: #9d4edd;
+            --accent-tertiary: #ff6b6b;
+            --accent-success: #4CAF50;
+            --gradient-primary: linear-gradient(135deg, #00d9ff 0%, #9d4edd 100%);
+            --gradient-secondary: linear-gradient(135deg, #ff6b6b 0%, #ffd166 100%);
+            --gradient-dark: linear-gradient(135deg, #0a192f 0%, #0f2547 100%);
+            --gradient-text: linear-gradient(90deg, #00d9ff, #9d4edd, #ff6b6b);
+            --text-primary: #f0f7ff;
+            --text-secondary: #c3d7ff;
+            --text-tertiary: #8fa3d9;
+            --card-bg: rgba(15, 37, 71, 0.85);
+            --glass-bg: rgba(15, 37, 71, 0.6);
+            --glass-border: rgba(0, 217, 255, 0.15);
+            --shadow: 0 20px 40px rgba(2, 12, 27, 0.8);
+            --shadow-light: 0 10px 30px rgba(0, 217, 255, 0.2);
+            --shadow-accent: 0 15px 35px rgba(157, 78, 221, 0.3);
+            --transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+            --border-radius: 16px;
+            --section-spacing: 160px;
+            --particle-size: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html {
+            scroll-padding-top: 120px;
+        }
+
+        body {
+            background-color: var(--primary-dark);
+            color: var(--text-primary);
+            font-family: 'Almarai', 'Tajawal', sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 217, 255, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(157, 78, 221, 0.08) 0%, transparent 25%),
+                radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+            position: relative;
+            letter-spacing: 0.3px;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, var(--primary-dark) 25px, transparent 1%) center,
+                linear-gradient(var(--primary-dark) 25px, transparent 1%) center,
+                var(--accent-primary);
+            background-size: 26px 26px;
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* تحسينات الهيدر */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2.5rem auto;
+            max-width: 1600px;
+            padding: 0 5rem;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(10, 25, 47, 0.92);
+            backdrop-filter: blur(20px) saturate(200%);
+            border-radius: 24px;
+            padding: 1.8rem 4rem;
+            margin-top: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+        }
+
+        header.scrolled {
+            padding: 1.4rem 4rem;
+            margin-top: 0.8rem;
+            background: rgba(10, 25, 47, 0.97);
+            border-color: rgba(0, 217, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(2, 12, 27, 0.9);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            transition: var(--transition);
+        }
+
+        .logo-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: 900;
+            font-size: 1.6rem;
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.4);
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .logo-text {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 900;
+            font-size: 2rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            text-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
+        }
+
+        .navigation ul {
+            display: flex;
+            list-style-type: none;
+            gap: 4rem;
+        }
+
+        .navigation a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 0.8rem 0;
+            transition: var(--transition);
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .navigation a::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+            box-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        .navigation a:hover::before {
+            opacity: 1;
+            left: -18px;
+        }
+
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px var(--accent-primary);
+        }
+
+        .navigation a:hover {
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+        }
+
+        .navigation a:hover::after {
+            width: 100%;
+        }
+
+        .navigation a.active {
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+        }
+
+        .navigation a.active::before {
+            opacity: 1;
+            left: -18px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(0, 217, 255, 0.08);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 1001;
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--accent-primary);
+            background: rgba(0, 217, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 217, 255, 0.2);
+        }
+
+        /* تحسينات قسم البطل */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12rem auto 8rem;
+            max-width: 1600px;
+            padding: 0 5rem;
+            position: relative;
+            min-height: 90vh;
+        }
+
+        /* شبكة الجسيمات المتحركة */
+        .particles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            animation: particle-float 20s infinite linear;
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            z-index: 1;
+            max-width: 720px;
+        }
+
+        .greeting {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 700;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .greeting::before {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0, 217, 255, 0.4);
+        }
+
+        .name {
+            font-size: 5.5rem;
+            color: var(--text-primary);
+            font-weight: 900;
+            line-height: 1.05;
+            font-family: 'El Messiri', sans-serif;
+            letter-spacing: -2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .name span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .name span::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            box-shadow: 0 3px 15px var(--accent-primary);
+        }
+
+        .title {
+            font-size: 4.5rem;
+            color: var(--text-secondary);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2.5rem;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .title .typing-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            position: relative;
+            text-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
+        }
+
+        .description {
+            color: var(--text-tertiary);
+            font-size: 1.5rem;
+            margin-bottom: 3.5rem;
+            max-width: 650px;
+            line-height: 2;
+            padding-right: 1.5rem;
+            border-right: 4px solid rgba(0, 217, 255, 0.3);
+            font-weight: 500;
+        }
+
+        .typing-text {
+            border-right: 4px solid var(--accent-primary);
+            padding-right: 12px;
+            animation: blink 1s infinite;
+            box-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 2.5rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1.4rem 3.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 1.2rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            font-family: 'Almarai', sans-serif;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(2, 12, 27, 0.5);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-primary {
+            background: transparent;
+            color: var(--accent-primary);
+            box-shadow: none;
+            border: 2px solid var(--accent-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary:hover {
+            background: rgba(0, 217, 255, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.3);
+            border-color: var(--accent-primary);
+        }
+
+        .btn-secondary {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            border: 2px solid transparent;
+        }
+
+        .btn-secondary:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(157, 78, 221, 0.4);
+        }
+
+        .hero-image {
+            max-width: 700px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 40px 50px rgba(2, 12, 27, 0.8));
+            animation: float-img 12s ease-in-out infinite;
+            border-radius: 30px;
+            border: 3px solid rgba(0, 217, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            background: var(--gradient-primary);
+            border-radius: 35px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(25px);
+        }
+
+        @keyframes float-img {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            30% { transform: translateY(-30px) rotate(1deg); }
+            70% { transform: translateY(20px) rotate(-1deg); }
+        }
+
+        .stats {
+            display: flex;
+            gap: 5rem;
+            margin-top: 6rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -30px;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent-primary), transparent);
+            box-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        .stat-item:last-child::before {
+            display: none;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
+        }
+
+        .stat-number::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            left: -30px;
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+        }
+
+        .stat-text {
+            color: var(--text-tertiary);
+            font-size: 1.3rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* جديد: موجات تحت قسم البطل */
+        .wave-container {
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z' fill='%230f2547'/%3E%3C/svg%3E");
+            background-size: 1200px 150px;
+            animation: wave 25s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            opacity: 0.5;
+            animation: wave 20s linear infinite reverse;
+            background-position-x: 600px;
+        }
+
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+
+        /* تحسينات قسم عني */
+        .about {
+            margin: var(--section-spacing) auto;
+            max-width: 1600px;
+            padding: 0 5rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 10rem;
+            position: relative;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 150px;
+            height: 6px;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .section-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+            font-family: 'El Messiri', sans-serif;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            transform: scaleX(0.4);
+            transform-origin: right;
+            transition: transform 0.8s ease;
+            box-shadow: 0 3px 15px var(--accent-primary);
+        }
+
+        .section-header:hover .section-title::after {
+            transform: scaleX(1);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.7rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.9;
+            font-weight: 600;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10rem;
+        }
+
+        .about-image {
+            max-width: 650px;
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 3px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .about-image:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 40px 70px rgba(2, 12, 27, 1);
+            border-color: var(--accent-primary);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.2;
+            z-index: -1;
+            transition: opacity 0.6s ease;
+        }
+
+        .about-image:hover::before {
+            opacity: 0.3;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent-primary);
+            border-radius: var(--border-radius);
+            z-index: -2;
+            opacity: 0.4;
+        }
+
+        .about-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .about-description {
+            color: var(--text-tertiary);
+            font-size: 1.4rem;
+            line-height: 2.1;
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        .about-description strong {
+            color: var(--accent-primary);
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 217, 255, 0.3);
+        }
+
+        /* جديد: مخطط المهارات */
+        .skills-chart {
+            margin-top: 4rem;
+        }
+
+        .skill-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-name {
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+        }
+
+        .skill-percent {
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            width: 0;
+            transition: width 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-level::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .skill {
+            background: rgba(0, 217, 255, 0.1);
+            padding: 1.2rem 2.5rem;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            transition: var(--transition);
+            color: var(--accent-primary);
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 8px 20px rgba(2, 12, 27, 0.3);
+        }
+
+        .skill::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(0, 217, 255, 0.2);
+            transition: width 0.5s ease;
+            z-index: -1;
+        }
+
+        .skill:hover::before {
+            width: 100%;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-light);
+            border-color: var(--accent-primary);
+            text-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        /* جديد: قسم المهام اليومية */
+        .daily-tasks {
+            margin-top: 6rem;
+            padding: 4rem;
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+        }
+
+        .tasks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .task-card {
+            background: rgba(10, 25, 47, 0.5);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .task-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-light);
+        }
+
+        .task-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+        }
+
+        .task-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .task-card p {
+            color: var(--text-tertiary);
+            line-height: 1.7;
+        }
+
+        /* تحسينات قسم الأعمال */
+        .works {
+            background: var(--gradient-dark);
+            padding: 12rem 0;
+            margin: 8rem 0;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid rgba(0, 217, 255, 0.2);
+            border-bottom: 3px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 15% 85%, rgba(0, 217, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 85% 15%, rgba(157, 78, 221, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .works-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 4rem;
+            margin-top: 8rem;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-25px) scale(1.03);
+            box-shadow: 0 50px 80px rgba(2, 12, 27, 1);
+            border-color: var(--accent-primary);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: brightness(0.9);
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .project-content {
+            padding: 3rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .project-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+            box-shadow: 0 2px 10px var(--accent-primary);
+        }
+
+        .project-card:hover .project-title::after {
+            width: 150px;
+        }
+
+        .project-description {
+            color: var(--text-tertiary);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.9;
+            text-align: justify;
+            font-weight: 500;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-tag {
+            background: rgba(0, 217, 255, 0.15);
+            color: var(--accent-primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(2, 12, 27, 0.2);
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-8px);
+            background: rgba(0, 217, 255, 0.25);
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+            text-shadow: 0 0 8px var(--accent-primary);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.2rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 800;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.2rem;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .project-link::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px var(--accent-primary);
+        }
+
+        .project-link:hover::after {
+            width: 100%;
+        }
+
+        .project-link:hover {
+            gap: 1.8rem;
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        /* جديد: قسم العملاء */
+        .clients {
+            margin-top: 10rem;
+        }
+
+        .clients-slider {
+            margin-top: 5rem;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .client-card {
+            background: var(--glass-bg);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(20px);
+            margin: 1rem;
+            transition: var(--transition);
+        }
+
+        .client-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-primary);
+            box-shadow: var(--shadow-light);
+        }
+
+        .client-quote {
+            color: var(--text-tertiary);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .client-details h4 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .client-details p {
+            color: var(--accent-primary);
+            font-size: 1rem;
+        }
+
+        /* تحسينات قسم التواصل */
+        .contact {
+            margin: var(--section-spacing) auto;
+            max-width: 1600px;
+            padding: 0 5rem;
+        }
+
+        .contact-content {
+            display: flex;
+            gap: 8rem;
+            margin-top: 8rem;
+        }
+
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 3rem;
+            background: var(--glass-bg);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(20px);
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-15px) scale(1.04);
+            box-shadow: 0 35px 60px rgba(2, 12, 27, 0.9);
+            border-color: var(--accent-primary);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 217, 255, 0.15);
+            border-radius: 50%;
+            font-size: 1.8rem;
+            color: var(--accent-primary);
+            transition: var(--transition);
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+        }
+
+        .contact-method:hover .contact-icon {
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            transform: rotate(20deg) scale(1.2);
+            box-shadow: 0 15px 30px rgba(0, 217, 255, 0.4);
+        }
+
+        .contact-details h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 900;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        .contact-details p, .contact-details a {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-primary);
+            text-decoration: underline;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .social-link {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border-radius: 50%;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--glass-border);
+            font-size: 1.6rem;
+            box-shadow: 0 15px 30px rgba(2, 12, 27, 0.6);
+        }
+
+        .social-link:hover {
+            transform: translateY(-15px) scale(1.2);
+            background: var(--gradient-primary);
+            color: var(--primary-dark);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.5);
+            border-color: transparent;
+        }
+
+        .contact-form {
+            flex: 1;
+            background: var(--glass-bg);
+            padding: 4.5rem;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .contact-form:hover {
+            border-color: var(--accent-primary);
+            box-shadow: 0 35px 60px rgba(2, 12, 27, 1);
+        }
+
+        .form-group {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1.6rem;
+            background: rgba(10, 25, 47, 0.8);
+            border: 2px solid rgba(0, 217, 255, 0.3);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Almarai', sans-serif;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 5px rgba(0, 217, 255, 0.25);
+            background: rgba(10, 25, 47, 0.95);
+        }
+
+        textarea.form-control {
+            min-height: 220px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: transparent;
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+            padding: 1.6rem 5rem;
+            border-radius: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-family: 'Almarai', sans-serif;
+            font-size: 1.3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(2, 12, 27, 0.6);
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: rgba(0, 217, 255, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.4);
+            border-color: var(--accent-primary);
+        }
+
+        /* جديد: مؤشرات الوقت الحقيقي */
+        .live-indicator {
+            position: fixed;
+            top: 120px;
+            left: 40px;
+            z-index: 999;
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            padding: 1.2rem 2rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .live-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--accent-success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .live-text {
+            color: var(--text-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+            }
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+            }
+        }
+
+        /* جديد: زر التفاعل الصوتي */
+        .voice-assistant {
+            position: fixed;
+            bottom: 40px;
+            left: 40px;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 15px 35px rgba(0, 217, 255, 0.4);
+            transition: var(--transition);
+            border: none;
+            font-size: 1.5rem;
+        }
+
+        .voice-assistant:hover {
+            transform: scale(1.1);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.6);
+        }
+
+        .voice-assistant.listening {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* الفوتر */
+        footer {
+            background: var(--gradient-dark);
+            padding: 8rem 0 4.5rem;
+            text-align: center;
+            position: relative;
+            border-top: 3px solid rgba(0, 217, 255, 0.2);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 217, 255, 0.1) 0%, transparent 90%);
+            pointer-events: none;
+        }
+
+        .footer-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            font-family: 'El Messiri', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
+            display: inline-block;
+            position: relative;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-logo span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-primary);
+            border-radius: 3px;
+            box-shadow: 0 3px 15px var(--accent-primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 4.5rem;
+            margin-bottom: 5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.4rem;
+            position: relative;
+            font-weight: 700;
+            font-family: 'Almarai', sans-serif;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px var(--accent-primary);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            color: var(--text-tertiary);
+            font-size: 1.2rem;
+            padding-top: 4.5rem;
+            border-top: 3px solid rgba(255, 255, 255, 0.15);
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .copyright strong {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            text-shadow: 0 2px 10px rgba(0, 217, 255, 0.2);
+        }
+
+        /* تأثيرات إضافية */
+        .back-to-top {
+            position: fixed;
+            bottom: 4rem;
+            left: 4rem;
+            width: 75px;
+            height: 75px;
+            background: transparent;
+            color: var(--accent-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: 2px solid var(--accent-primary);
+            font-size: 1.5rem;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-15px) scale(1.15);
+            background: rgba(0, 217, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.5);
+            color: var(--accent-primary);
+            text-shadow: 0 0 15px var(--accent-primary);
+        }
+
+        /* شريط التقدم */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 5px;
+            background: var(--gradient-primary);
+            z-index: 1001;
+            transition: width 0.2s ease;
+            box-shadow: 0 3px 15px rgba(0, 217, 255, 0.6);
+        }
+
+        /* تأثيرات التحميل */
+        .fade-in {
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* تأثيرات بصرية إضافية */
+        .glow-effect {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background: radial-gradient(circle at center, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* جديد: تأثيرات الشاشة */
+        .screen-effect {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                var(--accent-primary) 2px,
+                var(--accent-primary) 4px
+            );
+            animation: scan 20s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* تحسينات الاستجابة للشاشات المختلفة */
+        @media (max-width: 1600px) {
+            .hero, .about, .works-container, .contact, .footer-content {
+                max-width: 1400px;
+            }
+            
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 6rem;
+                margin-top: 14rem;
+            }
+            
+            .hero-content {
+                align-items: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+                gap: 8rem;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+                gap: 6rem;
+            }
+            
+            .stats {
+                justify-content: center;
+            }
+            
+            .stat-item::before {
+                display: none;
+            }
+            
+            .projects {
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                gap: 3.5rem;
+            }
+            
+            .live-indicator {
+                top: 100px;
+                left: 30px;
+                padding: 1rem 1.5rem;
+            }
+            
+            .voice-assistant {
+                bottom: 30px;
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .hero, .about, .works-container, .contact, .footer-content {
+                padding-right: 4rem;
+                padding-left: 4rem;
+            }
+            
+            header {
+                padding: 1.5rem 3.5rem;
+                margin: 2.5rem auto;
+                max-width: 95%;
+            }
+            
+            .name {
+                font-size: 4.8rem;
+            }
+            
+            .title {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 4rem;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero, .about, .works-container, .contact, .footer-content {
+                padding-right: 3.5rem;
+                padding-left: 3.5rem;
+            }
+            
+            .navigation ul {
+                gap: 3.5rem;
+            }
+            
+            .name {
+                font-size: 4.2rem;
+            }
+            
+            .title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-image {
+                max-width: 600px;
+            }
+            
+            .contact-form {
+                padding: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .navigation {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 400px;
+                height: 100vh;
+                background: rgba(10, 25, 47, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                border-left: 3px solid rgba(0, 217, 255, 0.3);
+                box-shadow: -20px 0 50px rgba(2, 12, 27, 0.95);
+            }
+            
+            .navigation.active {
+                display: flex;
+            }
+            
+            .navigation ul {
+                flex-direction: column;
+                gap: 4rem;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .navigation a {
+                font-size: 1.7rem;
+                width: 100%;
+                display: block;
+                padding: 1.2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .name {
+                font-size: 3.8rem;
+            }
+            
+            .title {
+                font-size: 3.2rem;
+            }
+            
+            .section-title {
+                font-size: 3.2rem;
+            }
+            
+            .projects {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .hero-image {
+                max-width: 550px;
+            }
+            
+            .contact-form {
+                padding: 3rem;
+            }
+            
+            .live-indicator, .voice-assistant {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header, .hero, .about, .works-container, .contact, .footer-content {
+                padding-right: 2.5rem;
+                padding-left: 2.5rem;
+            }
+            
+            .name {
+                font-size: 3.5rem;
+            }
+            
+            .title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .projects {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                gap: 4rem;
+                justify-content: space-around;
+            }
+            
+            .stat-number {
+                font-size: 3.5rem;
+            }
+            
+            .back-to-top {
+                bottom: 2.5rem;
+                left: 2.5rem;
+                width: 65px;
+                height: 65px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header, .hero, .about, .works-container, .contact, .footer-content {
+                padding-right: 2rem;
+                padding-left: 2rem;
+            }
+            
+            header {
+                padding: 1.2rem 2.5rem;
+                border-radius: 20px;
+                margin: 2rem auto;
+            }
+            
+            .name {
+                font-size: 3rem;
+            }
+            
+            .title {
+                font-size: 2.6rem;
+            }
+            
+            .description, .about-description {
+                font-size: 1.3rem;
+            }
+            
+            .btn {
+                padding: 1.3rem 2.8rem;
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .contact-form {
+                padding: 2.5rem;
+            }
+            
+            .footer-logo {
+                font-size: 3rem;
+            }
+            
+            .footer-links {
+                gap: 2.5rem;
+            }
+            
+            .footer-links a {
+                font-size: 1.3rem;
+            }
+            
+            .back-to-top {
+                bottom: 2rem;
+                left: 2rem;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .mobile-menu-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التقدم -->
+    <div class="progress-bar"></div>
+
+    <!-- مؤشر الوقت الحقيقي -->
+    <div class="live-indicator">
+        <div class="live-dot"></div>
+        <div class="live-text" id="liveTime">جاري التحميل...</div>
+    </div>
+
+    <!-- مساعد صوتي -->
+    <button class="voice-assistant" id="voiceAssistant" title="المساعد الصوتي">
+        <i class="fas fa-microphone"></i>
+    </button>
+
+    <!-- تأثيرات الشاشة -->
+    <div class="screen-effect"></div>
+
+    <!-- زر العودة للأعلى -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- الهيدر -->
+    <header id="header">
+        <div class="logo-container">
+            <div class="logo-icon">ع</div>
+            <div class="logo-text">عيسى الضراسي</div>
+        </div>
+        
+        <nav class="navigation">
+            <ul>
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#about">عني</a></li>
+                <li><a href="#works">أعمالي</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+        </nav>
+        
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="hero" id="home">
+        <!-- جسيمات متحركة -->
+        <div class="particles-container" id="particles"></div>
+        
+        <!-- موجات متحركة -->
+        <div class="wave-container">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        
+        <div class="hero-content fade-in">
+            <div class="greeting">
+                <span>مرحباً بكم في موقعي الشخصي، أنا</span>
+            </div>
+            <h1 class="name">عيسى <span>الضراسي</span></h1>
+            <h2 class="title">مهندس برمجيات <span class="typing-text"></span></h2>
+            <p class="description">
+                أساعد الشركات والأفراد في تحويل أفكارهم إلى تطبيقات ويب وتطبيقات جوال مبتكرة باستخدام أحدث التقنيات والممارسات في مجال البرمجة. أقدم حلولاً تقنية متطورة وتصميمات حديثة تلبي احتياجات العصر الرقمي.
+            </p>
+            
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    تواصل معي الآن
+                </a>
+                <a href="#" class="btn btn-secondary" id="downloadCV">
+                    <i class="fas fa-download"></i>
+                    تحميل السيرة الذاتية
+                </a>
+                <button class="btn btn-primary" id="themeToggle">
+                    <i class="fas fa-palette"></i>
+                    تغيير الثيم
+                </button>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">25</div>
+                    <div class="stat-text">مشروعاً مكتملاً بنجاح</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-text">عميلاً راضياً عن خدماتي</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-text">سنوات من الخبرة العملية</div>
+                </div>
+            </div>
+        </div>
+        
+        <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="صورة عيسى الضراسي" class="hero-image fade-in">
+    </section>
+
+    <!-- قسم عني -->
+    <section class="about" id="about">
+        <div class="section-header fade-in">
+            <h2 class="section-title">تعرف <span>عليّ أكثر</span></h2>
+            <p class="section-subtitle">مهندس برمجيات شغوف بالإبداع والتقنية، أهدف إلى بناء حلول رقمية مبتكرة ومؤثرة في حياة الناس</p>
+        </div>
+        
+        <div class="about-content">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="صورة عني" class="about-image fade-in">
+            
+            <div class="about-text fade-in">
+                <p class="about-description">
+                    أنا <strong>عيسى الضراسي</strong>، مهندس برمجيات ومطور ويب محترف مع خبرة تزيد عن ثلاث سنوات في تصميم وتطوير تطبيقات الويب والجوال المتقدمة. شغفي الأساسي يكمن في تحويل الأفكار الإبداعية إلى حلول رقمية مبتكرة تلبي احتياجات المستخدمين وتضيف قيمة حقيقية لمشاريعهم وأعمالهم.
+                </p>
+                
+                <p class="about-description">
+                    أتمتع بمهارات تقنية متقدمة وشاملة في تطوير الواجهات الأمامية والخلفية، مع التركيز على استخدام أحدث التقنيات وأفضل الممارسات في مجال البرمجة. أؤمن إيماناً راسخاً بأن التكنولوجيا يجب أن تكون في خدمة الإنسان لتسهيل حياته وتحقيق طموحاته، وهذا ما أسعى لتحقيقه في كل مشروع أتولى العمل عليه.
+                </p>
+                
+                <p class="about-description">
+                    أحرص دائماً على التعلم المستمر ومواكبة التطورات التقنية السريعة، حيث أتابع أحدث الاتجاهات في عالم البرمجة والتطوير. أهتم بالتفاصيل الدقيقة وألتزم بمعايير الجودة العالية في كل خطوة من خطوات العمل، بدءاً من التخطيط والتحليل وحتى التنفيذ والتسليم النهائي.
+                </p>
+                
+                <!-- جديد: مخطط المهارات -->
+                <div class="skills-chart">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">تطوير الويب</span>
+                            <span class="skill-percent">95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-percent="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">تطوير الجوال</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-percent="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">تصميم واجهات المستخدم</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-percent="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">إدارة المشاريع</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-percent="80"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills">
+                    <span class="skill">HTML5 & CSS3</span>
+                    <span class="skill">JavaScript (ES6+)</span>
+                    <span class="skill">React & Next.js</span>
+                    <span class="skill">Node.js & Express</span>
+                    <span class="skill">Python & Django</span>
+                    <span class="skill">UI/UX Design</span>
+                    <span class="skill">Responsive Design</span>
+                    <span class="skill">Git & GitHub</span>
+                    <span class="skill">MongoDB & MySQL</span>
+                    <span class="skill">Firebase</span>
+                    <span class="skill">REST APIs</span>
+                    <span class="skill">Agile/Scrum</span>
+                </div>
+                
+                <!-- جديد: المهام اليومية -->
+                <div class="daily-tasks">
+                    <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--accent-primary); font-family: 'El Messiri', sans-serif;">مهامي اليومية</h3>
+                    <div class="tasks-grid">
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>كتابة أكواد نظيفة</h4>
+                            <p>كتابة أكواد برمجية نظيفة وقابلة للصيانة مع الالتزام بأفضل الممارسات</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>التعلم المستمر</h4>
+                            <p>متابعة أحدث التقنيات والاتجاهات في عالم البرمجة والتطوير</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>التواصل مع العملاء</h4>
+                            <p>فهم احتياجات العملاء وتقديم الحلول المناسبة لمشاريعهم</p>
+                        </div>
+                        <div class="task-card">
+                            <div class="task-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>الإبداع والابتكار</h4>
+                            <p>ابتكار حلول جديدة ومبتكرة للتحديات التقنية المختلفة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#works" class="btn btn-primary" style="width: fit-content; margin-top: 3rem; align-self: flex-start;">
+                    <i class="fas fa-eye"></i>
+                    استعرض أعمالي السابقة
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الأعمال -->
+    <section class="works" id="works">
+        <div class="works-container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">أبرز <span>أعمالي</span></h2>
+                <p class="section-subtitle">مجموعة مختارة من أبرز المشاريع التي قمت بتطويرها باستخدام أحدث التقنيات وأفضل الممارسات البرمجية</p>
+            </div>
+            
+            <div class="projects">
+                <div class="project-card fade-in">
+                    <img src="https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png" alt="مشروع تطبيق ويب" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">منصة تعليمية متكاملة</h3>
+                        <p class="project-description">
+                            منصة تعليمية متطورة تقدم دورات متنوعة في مجال البرمجة والتقنية مع نظام متابعة متقدم ومحادثة مباشرة بين المعلمين والطلاب. تتضمن المنصة نظام تقييم ذكي وإدارة محتوى ديناميكية وتقارير تحليلية مفصلة لأداء الطلاب.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>استعرض تفاصيل المشروع</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="مشروع تطبيق جوال" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">تطبيق توصيل طعام ذكي</h3>
+                        <p class="project-description">
+                            تطبيق جوال متكامل يربط المطاعم بالعملاء مع نظام ذكي للطلبات والتوصيل والدفع الإلكتروني وتقييم المطاعم. يحتوي التطبيق على نظام تتبع حي لمواقع التوصيل وتوصيات ذكية بناءً على تفضيلات المستخدم.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Stripe API</span>
+                            <span class="tech-tag">Google Maps API</span>
+                            <span class="tech-tag">Push Notifications</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>استعرض تفاصيل المشروع</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="مشروع متجر إلكتروني" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">متجر إلكتروني متكامل</h3>
+                        <p class="project-description">
+                            متجر إلكتروني متطور مع نظام إدارة مخزون متقدم وإدارة طلبات ذكية وتقارير مبيعات تفصيلية وتكامل مع بوابات الدفع والشحن العالمية. يدعم المتجر تجربة مستخدم متميزة على جميع الأجهزة.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">Payment Gateways</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span>استعرض تفاصيل المشروع</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- جديد: قسم العملاء -->
+            <div class="clients fade-in">
+                <div class="section-header" style="margin-bottom: 5rem;">
+                    <h2 class="section-title">آراء <span>العملاء</span></h2>
+                    <p class="section-subtitle">آراء وتقييمات بعض العملاء الذين تعاملت معهم</p>
+                </div>
+                
+                <div class="clients-slider" id="clientsSlider">
+                    <div class="client-card">
+                        <div class="client-quote">
+                            "لقد تفاجأت بجودة العمل والمهنية العالية التي يتمتع بها عيسى. قام بتسليم المشروع في الوقت المحدد وبجودة تتجاوز التوقعات."
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">م</div>
+                            <div class="client-details">
+                                <h4>محمد أحمد</h4>
+                                <p>مدير شركة تقنية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-card">
+                        <div class="client-quote">
+                            "عمل رائع ومتميز. كان التواصل واضحاً والفهم العميق لمتطلبات المشروع واضحاً منذ البداية. أنصح بالتعامل معه بشدة."
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">س</div>
+                            <div class="client-details">
+                                <h4>سارة خالد</h4>
+                                <p>صاحبة متجر إلكتروني</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="client-card">
+                        <div class="client-quote">
+                            "المهنية والالتزام بالمواعيد كانت من أبرز ما يميز العمل مع عيسى. المشروع كان معقداً لكنه تعامل معه بكل احترافية."
+                        </div>
+                        <div class="client-info">
+                            <div class="client-avatar">ع</div>
+                            <div class="client-details">
+                                <h4>علي حسن</h4>
+                                <p>مؤسس منصة تعليمية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل -->
+    <section class="contact" id="contact">
+        <div class="section-header fade-in">
+            <h2 class="section-title">تواصل <span>معي الآن</span></h2>
+            <p class="section-subtitle">أنا هنا لمساعدتك في تحويل فكرتك المبتكرة إلى واقع رقمي متميز. لا تتردد في التواصل معي</p>
+        </div>
+        
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-method fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>البريد الإلكتروني</h3>
+                        <a href="mailto:ailsaaldirasii@gmail.com">ailsaaldirasii@gmail.com</a>
+                        <p>الرد خلال 24 ساعة عمل</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>رقم الهاتف</h3>
+                        <p>+967 773 165 416</p>
+                        <p>متاح من الساعة 9 صباحاً حتى 6 مساءً</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>الموقع الجغرافي</h3>
+                        <p>الجمهورية اليمنية</p>
+                        <p>أعمل عن بعد مع عملاء من مختلف أنحاء العالم</p>
+                    </div>
+                </div>
+                
+                <!-- جديد: نموذج حجز موعد -->
+                <div class="contact-method fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>حجز موعد استشارة</h3>
+                        <p>احجز موعداً للاستشارة المجانية</p>
+                        <button id="bookAppointment" style="background: transparent; border: 2px solid var(--accent-primary); color: var(--accent-primary); padding: 0.8rem 2rem; border-radius: 8px; margin-top: 1rem; cursor: pointer; transition: var(--transition); font-weight: bold; font-family: 'Almarai', sans-serif;">
+                            <i class="fas fa-calendar-check"></i> احجز الآن
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="social-links fade-in">
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Behance">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                    <a href="#" class="social-link" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-form fade-in">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required placeholder="أدخل اسمك الكامل ثلاثي">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required placeholder="example@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">موضوع الرسالة</label>
+                        <input type="text" id="subject" class="form-control" required placeholder="موضوع الرسالة أو المشروع">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">نص الرسالة</label>
+                        <textarea id="message" class="form-control" required placeholder="اكتب رسالتك هنا بالتفصيل..."></textarea>
+                    </div>
+                    
+                    <!-- جديد: اختيار نوع المشروع -->
+                    <div class="form-group">
+                        <label for="projectType" class="form-label">نوع المشروع</label>
+                        <select id="projectType" class="form-control">
+                            <option value="">اختر نوع المشروع</option>
+                            <option value="web">تطبيق ويب</option>
+                            <option value="mobile">تطبيق جوال</option>
+                            <option value="ecommerce">متجر إلكتروني</option>
+                            <option value="design">تصميم واجهات</option>
+                            <option value="other">أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        إرسال الرسالة الآن
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">عيسى <span>الضراسي</span></div>
+            
+            <div class="footer-links">
+                <a href="#home">الصفحة الرئيسية</a>
+                <a href="#about">معلومات عني</a>
+                <a href="#works">معرض الأعمال</a>
+                <a href="#contact">تواصل معي</a>
+            </div>
+            
+            <!-- جديد: صندوق الأخبار -->
+            <div class="newsletter" style="max-width: 600px; margin: 3rem auto;">
+                <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-primary);">اشترك في النشرة البريدية</h3>
+                <div style="display: flex; gap: 1rem;">
+                    <input type="email" placeholder="بريدك الإلكتروني" style="flex: 1; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-primary); font-family: 'Almarai', sans-serif;">
+                    <button style="background: var(--gradient-primary); color: var(--primary-dark); border: none; padding: 0 2rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: var(--transition);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                        اشترك
+                    </button>
+                </div>
+            </div>
+            
+            <p class="copyright">© <span id="currentYear">2023</span> جميع الحقوق محفوظة | تم التصميم والتطوير والبرمجة بواسطة <strong>عيسى الضراسي</strong> باستخدام أحدث تقنيات وتقنيات الويب الحديثة. هذا الموقع يعمل على جميع الأجهزة والمتصفحات.</p>
+        </div>
+    </footer>
+
+    <!-- جديد: نافذة حجز الموعد -->
+    <div id="appointmentModal" style="display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; backdrop-filter: blur(10px);">
+        <div style="background: var(--card-bg); max-width: 500px; margin: 100px auto; padding: 3rem; border-radius: var(--border-radius); border: 1px solid var(--glass-border); position: relative;">
+            <button onclick="document.getElementById('appointmentModal').style.display='none'" style="position: absolute; left: 20px; top: 20px; background: transparent; border: none; color: var(--accent-primary); font-size: 1.5rem; cursor: pointer;">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 style="font-size: 2rem; margin-bottom: 2rem; color: var(--accent-primary); font-family: 'El Messiri', sans-serif;">حجز موعد استشارة</h3>
+            <p style="color: var(--text-tertiary); margin-bottom: 2rem;">اختر الوقت المناسب لك وسأتواصل معك لتأكيد الموعد</p>
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <input type="date" style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-primary); font-family: 'Almarai', sans-serif;">
+                <input type="time" style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-primary); font-family: 'Almarai', sans-serif;">
+                <textarea placeholder="الغرض من الاستشارة..." style="padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--text-primary); font-family: 'Almarai', sans-serif; min-height: 100px;"></textarea>
+                <button style="background: var(--gradient-primary); color: var(--primary-dark); border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: var(--transition);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <i class="fas fa-calendar-check"></i> تأكيد الحجز
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        // تأثير الكتابة المتلاحقة
+        const typingText = document.querySelector('.typing-text');
+        const texts = ['محترف', 'مبتكر', 'مبدع', 'شغوف', 'مطور', 'مصمم', 'متميز'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function type() {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 60;
+            } else {
+                typingText.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 130;
+            }
+            
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 1800;
+                setTimeout(type, typingSpeed);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 600;
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        // إنشاء جسيمات متحركة
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 100;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // خصائص عشوائية
+                const size = Math.random() * 4 + 1;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = Math.random() * 10 + 20;
+                const colorIndex = Math.floor(Math.random() * 3);
+                const colors = ['rgba(0, 217, 255, 0.5)', 'rgba(157, 78, 221, 0.5)', 'rgba(255, 107, 107, 0.5)'];
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.background = colors[colorIndex];
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // تحديث الوقت الحقيقي
+        function updateLiveTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'Asia/Aden'
+            };
+            
+            const timeString = now.toLocaleDateString('ar-YE', options);
+            document.getElementById('liveTime').textContent = timeString;
+        }
+
+        // مخطط المهارات المتحرك
+        function animateSkillBars() {
+            const skillLevels = document.querySelectorAll('.skill-level');
+            skillLevels.forEach(level => {
+                const percent = level.getAttribute('data-percent');
+                level.style.width = `${percent}%`;
+            });
+        }
+
+        // مساعد صوتي
+        function setupVoiceAssistant() {
+            const voiceBtn = document.getElementById('voiceAssistant');
+            const recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            
+            if (recognition) {
+                const speechRecognition = new recognition();
+                speechRecognition.lang = 'ar-SA';
+                
+                voiceBtn.addEventListener('click', () => {
+                    if (!voiceBtn.classList.contains('listening')) {
+                        voiceBtn.classList.add('listening');
+                        voiceBtn.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+                        speechRecognition.start();
+                        
+                        // توقف تلقائي بعد 10 ثواني
+                        setTimeout(() => {
+                            if (voiceBtn.classList.contains('listening')) {
+                                voiceBtn.classList.remove('listening');
+                                voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+                                speechRecognition.stop();
+                            }
+                        }, 10000);
+                    } else {
+                        voiceBtn.classList.remove('listening');
+                        voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+                        speechRecognition.stop();
+                    }
+                });
+                
+                speechRecognition.onresult = (event) => {
+                    const transcript = event.results[0][0].transcript.toLowerCase();
+                    handleVoiceCommand(transcript);
+                };
+                
+                speechRecognition.onend = () => {
+                    voiceBtn.classList.remove('listening');
+                    voiceBtn.innerHTML = '<i class="fas fa-microphone"></i>';
+                };
+            } else {
+                voiceBtn.style.display = 'none';
+            }
+        }
+
+        function handleVoiceCommand(command) {
+            if (command.includes('الرئيسية') || command.includes('home')) {
+                window.location.hash = '#home';
+            } else if (command.includes('عني') || command.includes('about')) {
+                window.location.hash = '#about';
+            } else if (command.includes('أعمال') || command.includes('works')) {
+                window.location.hash = '#works';
+            } else if (command.includes('اتصل') || command.includes('contact')) {
+                window.location.hash = '#contact';
+            } else if (command.includes('سيرة') || command.includes('cv')) {
+                document.getElementById('downloadCV').click();
+            } else {
+                alert(`لا أفهم الأمر: "${command}". حاول: "اذهب إلى الرئيسية" أو "اذهب إلى أعمالي"`);
+            }
+        }
+
+        // تغيير الثيم
+        function setupThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            let isDark = true;
+            
+            themeToggle.addEventListener('click', () => {
+                const root = document.documentElement;
+                
+                if (isDark) {
+                    // ثيم فاتح
+                    root.style.setProperty('--primary-dark', '#f0f7ff');
+                    root.style.setProperty('--secondary-dark', '#dbeafe');
+                    root.style.setProperty('--text-primary', '#0a192f');
+                    root.style.setProperty('--text-secondary', '#1e3a8a');
+                    root.style.setProperty('--text-tertiary', '#475569');
+                    root.style.setProperty('--card-bg', 'rgba(255, 255, 255, 0.85)');
+                    root.style.setProperty('--glass-bg', 'rgba(255, 255, 255, 0.6)');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i> الثيم الداكن';
+                } else {
+                    // ثيم داكن
+                    root.style.setProperty('--primary-dark', '#0a192f');
+                    root.style.setProperty('--secondary-dark', '#0f2547');
+                    root.style.setProperty('--text-primary', '#f0f7ff');
+                    root.style.setProperty('--text-secondary', '#c3d7ff');
+                    root.style.setProperty('--text-tertiary', '#8fa3d9');
+                    root.style.setProperty('--card-bg', 'rgba(15, 37, 71, 0.85)');
+                    root.style.setProperty('--glass-bg', 'rgba(15, 37, 71, 0.6)');
+                    themeToggle.innerHTML = '<i class="fas fa-palette"></i> تغيير الثيم';
+                }
+                
+                isDark = !isDark;
+            });
+        }
+
+        // بدء التأثيرات بعد تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 800);
+            createParticles();
+            updateLiveTime();
+            setInterval(updateLiveTime, 1000);
+            
+            // تحديث السنة الحالية في الفوتر
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // إعداد المساعد الصوتي
+            setupVoiceAssistant();
+            
+            // إعداد تبديل الثيم
+            setupThemeToggle();
+            
+            // تأثير الهيدر عند التمرير
+            const header = document.getElementById('header');
+            const backToTop = document.querySelector('.back-to-top');
+            const progressBar = document.querySelector('.progress-bar');
+            
+            window.addEventListener('scroll', () => {
+                // تأثير الهيدر
+                if (window.scrollY > 150) {
+                    header.classList.add('scrolled');
+                    backToTop.classList.add('visible');
+                } else {
+                    header.classList.remove('scrolled');
+                    backToTop.classList.remove('visible');
+                }
+                
+                // شريط التقدم
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+                
+                // إضافة تأثير fade-in للعناصر عند التمرير
+                const fadeElements = document.querySelectorAll('.fade-in');
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 200;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = "1";
+                        element.style.transform = "translateY(0) scale(1)";
+                        
+                        // تفعيل مخطط المهارات عند ظهوره
+                        if (element.querySelector('.skill-level')) {
+                            animateSkillBars();
+                        }
+                    }
+                });
+                
+                // تحديث الروابط النشطة في القائمة
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.navigation a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 250)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // إرسال نموذج التواصل
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // محاكاة إرسال النموذج
+                const submitBtn = contactForm.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري إرسال رسالتك...';
+                submitBtn.disabled = true;
+                
+                // محاكاة تأخير الشبكة
+                setTimeout(() => {
+                    // رسالة نجاح وهمية
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> تم إرسال رسالتك بنجاح!';
+                    submitBtn.style.background = 'rgba(46, 204, 113, 0.15)';
+                    submitBtn.style.borderColor = '#2ecc71';
+                    submitBtn.style.color = '#2ecc71';
+                    
+                    // إعادة تعيين النموذج
+                    contactForm.reset();
+                    
+                    // استعادة الزر بعد 4 ثوان
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.background = '';
+                        submitBtn.style.borderColor = '';
+                        submitBtn.style.color = '';
+                        
+                        // إظهار رسالة نجاح
+                        alert('شكراً لك! تم استلام رسالتك بنجاح وسأرد عليك في أقرب وقت ممكن.');
+                    }, 4000);
+                }, 2500);
+            });
+            
+            // زر تحميل السيرة الذاتية
+            const downloadCV = document.getElementById('downloadCV');
+            downloadCV.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // محاكاة عملية التحميل
+                const originalText = downloadCV.innerHTML;
+                downloadCV.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التحميل...';
+                downloadCV.disabled = true;
+                
+                setTimeout(() => {
+                    downloadCV.innerHTML = '<i class="fas fa-check"></i> تم البدء بالتحميل';
+                    downloadCV.style.background = 'rgba(46, 204, 113, 0.15)';
+                    downloadCV.style.borderColor = '#2ecc71';
+                    downloadCV.style.color = '#2ecc71';
+                    
+                    // في حالة حقيقية، هنا سيتم تنزيل الملف
+                    alert('شكراً لاهتمامك! ستبدأ عملية تحميل سيرتي الذاتية قريباً. في حالة عدم بدء التحميل تلقائياً، يرجى التواصل معي عبر البريد الإلكتروني.');
+                    
+                    // استعادة الزر بعد 3 ثوان
+                    setTimeout(() => {
+                        downloadCV.innerHTML = originalText;
+                        downloadCV.disabled = false;
+                        downloadCV.style.background = '';
+                        downloadCV.style.borderColor = '';
+                        downloadCV.style.color = '';
+                    }, 3000);
+                }, 1500);
+            });
+            
+            // حجز موعد
+            const bookAppointment = document.getElementById('bookAppointment');
+            if (bookAppointment) {
+                bookAppointment.addEventListener('click', () => {
+                    document.getElementById('appointmentModal').style.display = 'block';
+                });
+            }
+            
+            // القائمة المتنقلة
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navigation = document.querySelector('.navigation');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navigation.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navigation.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+                    
+                // تأثير على زر القائمة
+                if (navigation.classList.contains('active')) {
+                    mobileMenuBtn.style.background = 'rgba(0, 217, 255, 0.15)';
+                    mobileMenuBtn.style.borderColor = 'var(--accent-primary)';
+                    mobileMenuBtn.style.color = 'var(--accent-primary)';
+                    mobileMenuBtn.style.boxShadow = '0 10px 25px rgba(0, 217, 255, 0.3)';
+                } else {
+                    mobileMenuBtn.style.background = 'rgba(0, 217, 255, 0.08)';
+                    mobileMenuBtn.style.borderColor = 'var(--glass-border)';
+                    mobileMenuBtn.style.color = 'var(--text-primary)';
+                    mobileMenuBtn.style.boxShadow = 'none';
+                }
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            const navLinks = document.querySelectorAll('.navigation a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992) {
+                        navigation.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        mobileMenuBtn.style.background = 'rgba(0, 217, 255, 0.08)';
+                        mobileMenuBtn.style.borderColor = 'var(--glass-border)';
+                        mobileMenuBtn.style.color = 'var(--text-primary)';
+                        mobileMenuBtn.style.boxShadow = 'none';
+                    }
+                });
+            });
+            
+            // إغلاق القائمة عند النقر خارجها
+            document.addEventListener('click', (e) => {
+                if (!navigation.contains(e.target) && !mobileMenuBtn.contains(e.target) && window.innerWidth <= 992) {
+                    navigation.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileMenuBtn.style.background = 'rgba(0, 217, 255, 0.08)';
+                    mobileMenuBtn.style.borderColor = 'var(--glass-border)';
+                    mobileMenuBtn.style.color = 'var(--text-primary)';
+                    mobileMenuBtn.style.boxShadow = 'none';
+                }
+            });
+            
+            // تهيئة تأثيرات fade-in للعناصر
+            const fadeElements = document.querySelectorAll('.fade-in');
+            fadeElements.forEach(element => {
+                element.style.opacity = "0";
+                element.style.transform = "translateY(50px) scale(0.95)";
+                element.style.transition = "opacity 1s ease, transform 1s ease";
+            });
+            
+            // تشغيل تأثيرات fade-in عند التحميل الأولي
+            setTimeout(() => {
+                window.dispatchEvent(new Event('scroll'));
+            }, 400);
+            
+            // تأثيرات إضافية عند تحميل الصفحة
+            setTimeout(() => {
+                document.body.style.overflow = 'auto';
+            }, 1000);
+            
+            // تفعيل مخطط المهارات عند التحميل
+            animateSkillBars();
+        });
+
+        // تأثيرات إضافية للمساعد الصوتي
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'ar-SA';
+                utterance.rate = 1;
+                speechSynthesis.speak(utterance);
+            }
+        }
+    </script>
+</body>
+</html>
